@@ -1,0 +1,26 @@
+#matchForm img { width: 25px }
+
+.cardsInput { width: 50px }
+
+#matchForm textarea {
+    padding: 0;
+    resize: none;
+}
+
+#matchForm fieldset {
+    margin: 0;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+#cardsInputDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+#cardsInputDiv > div {
+    margin-bottom: 5px;
+    margin-left: 25px;
+    display: flex;
+}

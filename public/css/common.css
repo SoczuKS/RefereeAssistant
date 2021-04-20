@@ -1,0 +1,129 @@
+body, html {
+    margin: 0;
+    background: rgb(247, 247, 247);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11pt;
+    scrollbar-color: rgb(201, 9, 19) rgb(247, 247, 247);
+}
+
+body { padding: 5px 5px 0 5px }
+
+.mainDiv { flex-direction: row; justify-content: space-between }
+
+input:disabled { color: black }
+
+form > label > *, form > label div > * { font-size: 12pt; }
+
+form {
+    font-size: 16pt;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-self: center;
+    align-self: center;
+}
+
+form > label {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1px;
+    margin-bottom: 1px
+}
+
+input, select, textarea {
+    width: 325px;
+    margin: 0 0 0 10px;
+    box-sizing: border-box;
+}
+
+input[type="checkbox"] { justify-self: right; width: auto }
+
+form input { text-indent: 3px }
+
+@media only screen and (max-width: 1000px) {
+    form {
+        font-size: 36pt;
+    }
+
+    form > label > input, form > label div input { font-size: 24pt; }
+    form > label > select { font-size: 15pt; }
+}
+
+form input[type="submit"] {
+    align-self: center;
+    cursor: pointer;
+    font-size: 15pt;
+    color: white;
+    background: darkred;
+    padding: 5px 15px;
+    border: white groove 2px;
+}
+
+form input[type="submit"]:disabled {
+    cursor: not-allowed;
+    background: gray;
+    color: black;
+    border: black ridge 2px;
+}
+
+a { text-decoration: none; }
+
+table {
+    padding: 0;
+    border-spacing: 0;
+    float: left;
+    border-collapse: collapse;
+    width: 100%
+}
+
+table th {
+    padding: 1px;
+    border: 3px solid rgb(201, 9, 19);
+    cursor: default
+}
+
+table td {
+    padding: 1px 3px;
+    border: 1px solid rgb(201, 9, 19);
+    border-bottom: 2px solid rgb(201, 9, 19)
+}
+
+@media only screen and (min-width: 1000px) {
+    td { width: 1%; white-space: nowrap; }
+}
+
+h1 { font-size: 26pt !important; margin: 0 }
+
+h1, h2 { text-align: center }
+
+.emptyCell { border: none; padding: 0 }
+
+.dateCol, .moneyCol, .homeTeamCol { text-align: right }
+
+.matchNumberCol, .dateCol { width: 1% }
+
+.totalCol { font-weight: bold }
+
+.competitionCol, .roleCol, .resultCol { text-align: center; width: 0.1% }
+
+.awayTeamCol { text-align: left }
+
+.clickable-row { cursor: pointer; }
+
+.disabled { cursor: default !important; pointer-events: none; opacity: 0.5 }
+
+.cardsCol { width: 1%; text-align: right }
+
+.separatorCol { border-right: 2px solid rgb(201, 9, 19) !important }
+
+.bottomLeftEmpty { border-bottom: none !important; border-left: none !important }
+
+.totalRow { border-top: 3px solid rgb(201, 9, 19); font-weight: bold }
+
+.mainFlex { flex-direction: column; width: 100% }
+
+.flex { display: flex }
+
+.menuRow { flex-direction: row; justify-content: center }
+
+.cellCrossedOut { background-color: #D4D4D4 }

@@ -1,0 +1,12 @@
+.m-18 { font-size: 18px }
+.m-24 { font-size: 24px }
+.m-36 { font-size: 36px }
+.m-48 { font-size: 48px }
+
+.m-green { color: #008000 }
+.m-blue { color: #0000CD }
+.m-gray { color: #A0A0A0 }
+.m-black { color: #000000 }
+.m-yellow { color: #FFD600 }
+
+.rot-180 { transform: rotate(180deg) }

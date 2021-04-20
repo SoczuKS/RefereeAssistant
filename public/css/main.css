@@ -1,0 +1,7 @@
+#menu { justify-content: center; flex-direction: column }
+
+#menuSecondRow { position: absolute }
+
+#menu p { font-weight: bold; font-size: 12pt; margin: 0; height: 48px; line-height: 48px }
+
+th > img { width: 25px; }

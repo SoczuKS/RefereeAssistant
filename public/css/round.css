@@ -1,0 +1,3 @@
+#roundMenu { flex-direction: row; justify-content: flex-start; height: 48px; margin-bottom: 10px }
+
+#roundMenu > h2 { margin: 0; line-height: 48px; width: 100% }
