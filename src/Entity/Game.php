@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-use App\Repository\MatchRepository;
+use App\Repository\GameRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
@@ -11,7 +11,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * @ORM\Table(name="matches")
  * @UniqueEntity("matchNumber")
  */
-class Match {
+class Game {
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
