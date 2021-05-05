@@ -11,7 +11,8 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * @ORM\Table(name="matches")
  * @UniqueEntity("matchNumber")
  */
-class Game {
+class Game
+{
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -71,105 +72,131 @@ class Game {
      */
     private $awayTeam;
 
-    public function getId(): ?int {
+    /**
+     * @ORM\OneToMany(targetEntity=GameReferee::class, mappedBy="game", fetch="EXTRA_LAZY")
+     */
+    private $referees;
+
+    public function getId(): ?int
+    {
         return $this->id;
     }
 
-    public function getMatchNumber(): ?int {
+    public function getMatchNumber(): ?int
+    {
         return $this->matchNumber;
     }
 
-    public function setMatchNumber(?int $matchNumber): self {
+    public function setMatchNumber(?int $matchNumber): self
+    {
         $this->matchNumber = $matchNumber;
 
         return $this;
     }
 
-    public function getDate(): ?\DateTimeInterface {
+    public function getDate(): ?\DateTimeInterface
+    {
         return $this->date;
     }
 
-    public function setDate(\DateTimeInterface $date): self {
+    public function setDate(\DateTimeInterface $date): self
+    {
         $this->date = $date;
 
         return $this;
     }
 
-    public function getHomeGoals(): ?int {
+    public function getHomeGoals(): ?int
+    {
         return $this->homeGoals;
     }
 
-    public function setHomeGoals(?int $homeGoals): self {
+    public function setHomeGoals(?int $homeGoals): self
+    {
         $this->homeGoals = $homeGoals;
 
         return $this;
     }
 
-    public function getAwayGoals(): ?int {
+    public function getAwayGoals(): ?int
+    {
         return $this->awayGoals;
     }
 
-    public function setAwayGoals(int $awayGoals): self {
+    public function setAwayGoals(int $awayGoals): self
+    {
         $this->awayGoals = $awayGoals;
 
         return $this;
     }
 
-    public function getYellowCards(): ?int {
+    public function getYellowCards(): ?int
+    {
         return $this->yellowCards;
     }
 
-    public function setYellowCards(?int $yellowCards): self {
+    public function setYellowCards(?int $yellowCards): self
+    {
         $this->yellowCards = $yellowCards;
 
         return $this;
     }
 
-    public function getRedCardsFromSecondYellow(): ?int {
+    public function getRedCardsFromSecondYellow(): ?int
+    {
         return $this->redCardsFromSecondYellow;
     }
 
-    public function setRedCardsFromSecondYellow(?int $redCardsFromSecondYellow): self {
+    public function setRedCardsFromSecondYellow(?int $redCardsFromSecondYellow): self
+    {
         $this->redCardsFromSecondYellow = $redCardsFromSecondYellow;
 
         return $this;
     }
 
-    public function getRedCards(): ?int {
+    public function getRedCards(): ?int
+    {
         return $this->redCards;
     }
 
-    public function setRedCards(?int $redCards): self {
+    public function setRedCards(?int $redCards): self
+    {
         $this->redCards = $redCards;
 
         return $this;
     }
 
-    public function getHeld(): ?bool {
+    public function getHeld(): ?bool
+    {
         return $this->held;
     }
 
-    public function setHeld(bool $held): self {
+    public function setHeld(bool $held): self
+    {
         $this->held = $held;
 
         return $this;
     }
 
-    public function getHomeTeam(): ?Team {
+    public function getHomeTeam(): ?Team
+    {
         return $this->homeTeam;
     }
 
-    public function setHomeTeam(?Team $homeTeam): self {
+    public function setHomeTeam(?Team $homeTeam): self
+    {
         $this->homeTeam = $homeTeam;
 
         return $this;
     }
 
-    public function getAwayTeam(): ?Team {
+    public function getAwayTeam(): ?Team
+    {
         return $this->awayTeam;
     }
 
-    public function setAwayTeam(?Team $awayTeam): self {
+    public function setAwayTeam(?Team $awayTeam): self
+    {
         $this->awayTeam = $awayTeam;
 
         return $this;

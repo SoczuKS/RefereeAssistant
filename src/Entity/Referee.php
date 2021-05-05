@@ -10,7 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity(repositoryClass=RefereeRepository::class)
  * @ORM\Table(name="referees")
  */
-class Referee {
+class Referee
+{
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -33,35 +34,47 @@ class Referee {
      */
     private $birthdate;
 
-    public function getId(): ?int {
+    /**
+     * @ORM\OneToMany(targetEntity=GameReferee::class, mappedBy="referee")
+     */
+    private $matchesRefereed;
+
+    public function getId(): ?int
+    {
         return $this->id;
     }
 
-    public function getFirstname(): ?string {
+    public function getFirstname(): ?string
+    {
         return $this->firstname;
     }
 
-    public function setFirstname(string $firstname): self {
+    public function setFirstname(string $firstname): self
+    {
         $this->firstname = $firstname;
 
         return $this;
     }
 
-    public function getSurname(): ?string {
+    public function getSurname(): ?string
+    {
         return $this->surname;
     }
 
-    public function setSurname(string $surname): self {
+    public function setSurname(string $surname): self
+    {
         $this->surname = $surname;
 
         return $this;
     }
 
-    public function getBirthdate(): ?DateTimeImmutable {
+    public function getBirthdate(): ?DateTimeImmutable
+    {
         return $this->birthdate;
     }
 
-    public function setBirthdate(DateTimeImmutable $birthdate): self {
+    public function setBirthdate(DateTimeImmutable $birthdate): self
+    {
         $this->birthdate = $birthdate;
 
         return $this;
