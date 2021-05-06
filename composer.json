@@ -1,4 +1,6 @@
 {
+    "name": "soczuks/referee_assistant",
+    "description": "App to statistics of matches refereed",
     "type": "project",
     "license": "proprietary",
     "require": {
