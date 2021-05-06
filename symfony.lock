@@ -2,6 +2,9 @@
     "composer/package-versions-deprecated": {
         "version": "1.11.99.1"
     },
+    "composer/xdebug-handler": {
+        "version": "1.4.6"
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -106,6 +109,9 @@
     "nikic/php-parser": {
         "version": "v4.10.4"
     },
+    "pdepend/pdepend": {
+        "version": "2.9.1"
+    },
     "phpdocumentor/reflection-common": {
         "version": "2.2.0"
     },
@@ -114,6 +120,9 @@
     },
     "phpdocumentor/type-resolver": {
         "version": "1.4.0"
+    },
+    "phpmd/phpmd": {
+        "version": "2.10.0"
     },
     "psr/cache": {
         "version": "1.0.1"
