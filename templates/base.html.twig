@@ -19,7 +19,7 @@
         {% block body %}
         <div id="navigation">
             {% block navigation %}
-                {{ knp_menu_render('mainMenu') }}
+                {{ knp_menu_render('mainMenu', {'template': 'menu/main_menu.html.twig'}) }}
             {% endblock %}
         </div>
         <div id="content">
