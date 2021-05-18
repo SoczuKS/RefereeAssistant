@@ -19,6 +19,12 @@ class MenuBuilder
         $menu = $this->factory->createItem('root');
 
         $menu->addChild('home', ['route' => 'main']);
+        $menu->addChild('matches', ['route' => 'matches']);
+        $menu->addChild('tournaments', ['route' => 'tournaments']);
+        $menu->addChild('competitions', ['route' => 'competitions']);
+        $menu->addChild('referees', ['route' => 'referees']);
+        $menu->addChild('teams', ['route' => 'teams']);
+        $menu->addChild('rounds', ['route' => 'rounds']);
 
         return $menu;
     }
