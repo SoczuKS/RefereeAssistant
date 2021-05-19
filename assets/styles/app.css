@@ -1,3 +1,19 @@
 body {
     background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+}
+
+#mainMenu {
+    display: flex;
+}
+
+#mainMenu > ul {
+    display: flex;
+    flex-direction: row;
+}
+
+#mainMenu img {
+    width: 64px;
+    height: 64px;
 }

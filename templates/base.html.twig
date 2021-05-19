@@ -17,11 +17,11 @@
     </head>
     <body>
         {% block body %}
-        <div id="navigation">
+        <nav id="mainMenu">
             {% block navigation %}
                 {{ knp_menu_render('mainMenu', {'template': 'menu/main_menu.html.twig'}) }}
             {% endblock %}
-        </div>
+        </nav>
         <div id="content">
             {% block content %}
             {% endblock %}
