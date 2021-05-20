@@ -32,6 +32,7 @@ Encore
      */
     .addEntry('reset', './assets/reset.js')
     .addEntry('app', './assets/app.js')
+    .addEntry('main', './assets/main.js')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')

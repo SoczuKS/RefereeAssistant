@@ -1,5 +1,26 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
+    <div id="welcomeMessage">
+        {{ 'mainPage.introduction' | trans | capitalize }}
+
+        {% if not app.user %}
+            {{ 'user.guest' | trans }}
+        {% else %}
+            {{ app.user.email }}
+        {% endif %}
+    </div>
+
+    {% if not app.user %}
+        <div id="loginRegisterPanel">
+            <a href="{{ path('login') }}">
+                <span>{{ 'pages.login' | trans | capitalize }}</span>
+            </a>
+
+            <a href="{{ path('registration') }}">
+                <span>{{ 'pages.register' | trans | capitalize }}</span>
+            </a>
+        </div>
+    {% endif %}
 
 {% endblock %}

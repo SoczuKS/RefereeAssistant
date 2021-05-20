@@ -1,1 +1,9 @@
-Home: Strona główna
+pages:
+  login: zaloguj się
+  register: zarejestruj się
+
+user:
+  guest: gość
+
+mainPage:
+  introduction: jesteś zalogowany jako

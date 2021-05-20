@@ -1,0 +1,22 @@
+#welcomeMessage {
+    text-align: center;
+    font-size: 2.5em;
+}
+
+#loginRegisterPanel {
+    display: flex;
+    align-self: center;
+    flex-direction: row;
+    margin-top: 20px;
+    width: 40vw;
+    justify-content: space-evenly;
+}
+
+#loginRegisterPanel > a {
+    display: flex;
+    background-color: rgb(201, 9, 19);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1.5em;
+}
