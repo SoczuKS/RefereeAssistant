@@ -30,7 +30,7 @@ class Referee
     private $surname;
 
     /**
-     * @ORM\Column(type="date_immutable")
+     * @ORM\Column(type="date_immutable", nullable=true)
      */
     private $birthdate;
 
