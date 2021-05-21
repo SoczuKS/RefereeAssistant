@@ -1,6 +1,13 @@
 pages:
   login: zaloguj się
   register: zarejestruj się
+  main: strona główna
+  matches: mecze
+  competitions: rozgrywki
+  tournaments: turnieje
+  referees: sędziowie
+  teams: zespoły
+  rounds: rundy
 
 user:
   guest: gość
