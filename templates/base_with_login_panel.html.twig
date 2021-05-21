@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block navigation %}
+    {{ parent() }}
+
+    {% if not app.user %}
+        <div id="smallLoginRegisterPanel">
+            <a href="{{ path('login') }}">
+                <span>{{ 'pages.login' | trans | capitalize }}</span>
+            </a>
+
+            <a href="{{ path('registration') }}">
+                <span>{{ 'pages.register' | trans | capitalize }}</span>
+            </a>
+        </div>
+    {% endif %}
+{% endblock %}

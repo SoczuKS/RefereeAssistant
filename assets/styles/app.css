@@ -12,6 +12,7 @@ body {
 
 #mainMenu {
     display: flex;
+    justify-content: space-between;
 }
 
 #mainMenu > ul {
@@ -37,4 +38,21 @@ a {
 
 a:visited {
     color: initial;
+}
+
+#smallLoginRegisterPanel {
+    display: flex;
+    flex-direction: row;
+    width: 30vw;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#smallLoginRegisterPanel > a {
+    display: flex;
+    background-color: rgb(201, 9, 19);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1.25em;
 }
