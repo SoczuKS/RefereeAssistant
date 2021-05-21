@@ -28,4 +28,12 @@ class MenuBuilder
 
         return $menu;
     }
+
+    public function teamsSubmenu(array $options): ItemInterface {
+        $menu = $this->factory->createItem('root');
+
+        $menu->addChild('add', ['route' => 'teams']);
+
+        return $menu;
+    }
 }
