@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\TeamRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -24,9 +26,14 @@ class Team
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=300)
+     * @ORM\ManyToMany(targetEntity=Address::class, inversedBy="teams")
      */
     private $address;
+
+    public function __construct()
+    {
+        $this->address = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -45,14 +52,26 @@ class Team
         return $this;
     }
 
-    public function getAddress(): ?string
+    /**
+     * @return Collection|Address[]
+     */
+    public function getAddress(): Collection
     {
         return $this->address;
     }
 
-    public function setAddress(string $address): self
+    public function addAddress(Address $address): self
     {
-        $this->address = $address;
+        if (!$this->address->contains($address)) {
+            $this->address[] = $address;
+        }
+
+        return $this;
+    }
+
+    public function removeAddress(Address $address): self
+    {
+        $this->address->removeElement($address);
 
         return $this;
     }
