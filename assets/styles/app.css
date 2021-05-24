@@ -3,6 +3,10 @@
     src: url('../fonts/Roboto_Slab/RobotoSlab-VariableFont_wght.ttf');
 }
 
+:root {
+    --redAccent: rgb(201, 9, 19);
+}
+
 body {
     background-color: rgb(247, 247, 247);
     display: flex;
@@ -50,7 +54,7 @@ a:visited {
 
 #smallLoginRegisterPanel > a {
     display: flex;
-    background-color: rgb(201, 9, 19);
+    background-color: var(--redAccent);
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
