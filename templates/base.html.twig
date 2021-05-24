@@ -17,15 +17,20 @@
     </head>
     <body>
         {% block body %}
-        <nav id="mainMenu">
-            {% block navigation %}
-                {{ knp_menu_render('mainMenu', {'template': 'menu/image_based_menu.html.twig'}) }}
-            {% endblock %}
-        </nav>
-        <div id="content">
-            {% block content %}
-            {% endblock %}
-        </div>
+            <nav id="mainMenu">
+                {% block navigation %}
+                    {{ knp_menu_render('mainMenu', {'template': 'menu/image_based_menu.html.twig'}) }}
+
+                    <div id="pageTitle">
+                        {% block pageTitle %}
+                        {% endblock %}
+                    </div>
+                {% endblock %}
+            </nav>
+            <div id="content">
+                {% block content %}
+                {% endblock %}
+            </div>
         {% endblock %}
     </body>
 </html>
