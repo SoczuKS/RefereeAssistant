@@ -2,6 +2,10 @@
 
 {% block title %}{{ "pages.teams" | trans | capitalize }}{% endblock %}
 
+{% block pageTitle %}
+    {{ "pages.teams" | trans | upper }}
+{% endblock %}
+
 {% block content %}
     <div id="submenu">
         {{ knp_menu_render('teamsSubmenu', { 'template': 'menu/image_based_menu.html.twig' }) }}
