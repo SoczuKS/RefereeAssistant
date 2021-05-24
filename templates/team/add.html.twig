@@ -1,0 +1,17 @@
+{% extends 'base_with_login_panel.html.twig' %}
+
+{% block title %}{{ "pages.teams_add" | trans | capitalize }}{% endblock %}
+
+{% block pageTitle %}
+    {{ "pages.teams_add" | trans | upper }}
+{% endblock %}
+
+{% block content %}
+    <div id="submenu">
+        {{ knp_menu_render('teamsSubmenu', { 'template': 'menu/image_based_menu.html.twig' }) }}
+    </div>
+
+    <div id="mainContent">
+        {{ form(form) }}
+    </div>
+{% endblock %}

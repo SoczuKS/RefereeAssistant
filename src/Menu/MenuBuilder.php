@@ -32,7 +32,7 @@ class MenuBuilder
     public function teamsSubmenu(array $options): ItemInterface {
         $menu = $this->factory->createItem('root');
 
-        $menu->addChild('add', ['route' => 'teams']);
+        $menu->addChild('add', ['route' => 'teams_add']);
 
         return $menu;
     }
