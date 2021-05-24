@@ -17,6 +17,11 @@ body {
 #mainMenu {
     display: flex;
     justify-content: space-between;
+    margin-top: 10px
+}
+
+#mainMenu, #submenu {
+    padding-left: 20px;
 }
 
 #mainMenu > ul {
@@ -59,8 +64,4 @@ a:visited {
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 1.25em;
-}
-
-#submenu {
-    margin-left: 20px;
 }
