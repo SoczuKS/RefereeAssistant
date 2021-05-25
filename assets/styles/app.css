@@ -76,4 +76,5 @@ a:visited {
 
 #main_content {
     display: flex;
+    justify-content: center;
 }
