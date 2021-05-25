@@ -23,12 +23,12 @@ body {
 }
 
 #main_menu {
-    display: flex;
     justify-content: space-between;
     margin-top: 10px
 }
 
 #main_menu, #submenu {
+    display: flex;
     padding-left: 20px;
 }
 
@@ -72,4 +72,8 @@ a:visited {
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 1.25em;
+}
+
+#main_content {
+    display: flex;
 }
