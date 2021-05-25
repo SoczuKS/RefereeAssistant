@@ -4,7 +4,7 @@
     {{ parent() }}
 
     {% if not app.user %}
-        <div id="smallLoginRegisterPanel">
+        <div id="login_register_panel_small">
             <a href="{{ path('login') }}">
                 <span>{{ 'pages.login' | trans | capitalize }}</span>
             </a>

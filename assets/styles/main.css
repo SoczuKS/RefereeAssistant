@@ -1,9 +1,9 @@
-#welcomeMessage {
+#welcome_message {
     text-align: center;
     font-size: 2.5em;
 }
 
-#loginRegisterPanel {
+#login_register_panel {
     display: flex;
     align-self: center;
     flex-direction: row;
@@ -12,7 +12,7 @@
     justify-content: space-evenly;
 }
 
-#loginRegisterPanel > a {
+#login_register_panel > a {
     display: flex;
     background-color: rgb(201, 9, 19);
     color: white;

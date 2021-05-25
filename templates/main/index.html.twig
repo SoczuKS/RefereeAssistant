@@ -3,8 +3,8 @@
 {% block title %}{{ "pages.main" | trans | capitalize }}{% endblock %}
 
 {% block content %}
-    <div id="welcomeMessage">
-        {{ 'mainPage.introduction' | trans | capitalize }}
+    <div id="welcome_message">
+        {{ 'main_page.introduction' | trans | capitalize }}
 
         {% if not app.user %}
             {{ 'user.guest' | trans }}
@@ -14,7 +14,7 @@
     </div>
 
     {% if not app.user %}
-        <div id="loginRegisterPanel">
+        <div id="login_register_panel">
             <a href="{{ path('login') }}">
                 <span>{{ 'pages.login' | trans | capitalize }}</span>
             </a>

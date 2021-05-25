@@ -13,5 +13,5 @@ pages:
 user:
   guest: gość
 
-mainPage:
+main_page:
   introduction: jesteś zalogowany jako

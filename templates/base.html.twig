@@ -17,12 +17,12 @@
     </head>
     <body>
         {% block body %}
-            <nav id="mainMenu">
+            <nav id="main_menu">
                 {% block navigation %}
                     {{ knp_menu_render('mainMenu', {'template': 'menu/image_based_menu.html.twig'}) }}
 
-                    <div id="pageTitle">
-                        {% block pageTitle %}
+                    <div id="page_title">
+                        {% block page_title %}
                         {% endblock %}
                     </div>
                 {% endblock %}

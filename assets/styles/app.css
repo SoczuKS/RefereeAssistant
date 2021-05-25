@@ -14,7 +14,7 @@ body {
     font-family: Roboto, sans-serif;
 }
 
-#pageTitle {
+#page_title {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,22 +22,22 @@ body {
     font-weight: bold;
 }
 
-#mainMenu {
+#main_menu {
     display: flex;
     justify-content: space-between;
     margin-top: 10px
 }
 
-#mainMenu, #submenu {
+#main_menu, #submenu {
     padding-left: 20px;
 }
 
-#mainMenu > ul {
+#main_menu > ul {
     display: flex;
     flex-direction: row;
 }
 
-#mainMenu img {
+#main_menu img {
     width: 64px;
     height: 64px;
 }
@@ -57,7 +57,7 @@ a:visited {
     color: initial;
 }
 
-#smallLoginRegisterPanel {
+#login_register_panel_small {
     display: flex;
     flex-direction: row;
     width: 30vw;
@@ -65,7 +65,7 @@ a:visited {
     align-items: center;
 }
 
-#smallLoginRegisterPanel > a {
+#login_register_panel_small > a {
     display: flex;
     background-color: var(--redAccent);
     color: white;
