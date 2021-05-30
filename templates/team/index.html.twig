@@ -20,4 +20,35 @@
     <div id="submenu">
         {{ knp_menu_render('teamsSubmenu', { 'template': 'menu/image_based_menu.html.twig' }) }}
     </div>
+
+    <div id="main_content">
+        <table id="teams_table">
+            <thead>
+            <tr>
+                <th>Nazwa</th>
+                <th>Adres</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for team in teams %}
+                    <tr>
+                        <td>{{ team.name }}</td>
+                        <td>
+                            <table class="team_addresses">
+                                {% for address in team.getAddresses() %}
+                                    <tr>
+                                        <td>{{ address.getStreet() }}</td>
+                                        <td>{{ address.getCity().getName() }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}
