@@ -28,11 +28,11 @@ class Team
     /**
      * @ORM\ManyToMany(targetEntity=Address::class, inversedBy="teams")
      */
-    private $address;
+    private $addresses;
 
     public function __construct()
     {
-        $this->address = new ArrayCollection();
+        $this->addresses = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -55,15 +55,15 @@ class Team
     /**
      * @return Collection|Address[]
      */
-    public function getAddress(): Collection
+    public function getAddresses(): Collection
     {
-        return $this->address;
+        return $this->addresses;
     }
 
     public function addAddress(Address $address): self
     {
-        if (!$this->address->contains($address)) {
-            $this->address[] = $address;
+        if (!$this->addresses->contains($address)) {
+            $this->addresses[] = $address;
         }
 
         return $this;
@@ -71,7 +71,7 @@ class Team
 
     public function removeAddress(Address $address): self
     {
-        $this->address->removeElement($address);
+        $this->addresses->removeElement($address);
 
         return $this;
     }

@@ -32,7 +32,7 @@ class Address
     private $street;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Team::class, mappedBy="address")
+     * @ORM\ManyToMany(targetEntity=Team::class, mappedBy="addresses")
      */
     private $teams;
 
