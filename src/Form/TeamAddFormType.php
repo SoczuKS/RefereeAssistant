@@ -14,8 +14,8 @@ class TeamAddFormType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('address')
-            ->add('add', SubmitType::class);
+            ->add('addresses\Form')
+            ->add('add', SubmitType::class)
         ;
     }
 
