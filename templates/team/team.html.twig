@@ -1,0 +1,27 @@
+{% extends 'base_with_login_panel.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('teams') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('teams') }}
+{% endblock %}
+
+{% block title %}Nazwa zespołu{% endblock %}
+
+{% block page_title %}
+    Nazwa zespołu
+{% endblock %}
+
+{% block content %}
+    <div id="submenu">
+        {{ knp_menu_render('teamsSubmenu', { 'template': 'menu/image_based_menu.html.twig' }) }}
+    </div>
+
+    <div id="main_content">
+
+    </div>
+{% endblock %}

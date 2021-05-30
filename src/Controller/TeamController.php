@@ -52,4 +52,14 @@ class TeamController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+    /**
+     * @Route("/team/{id}", methods={"GET"}, name="team", requirements={"id": "[1-9]\d*"})
+     */
+    public function team(Request $request, Team $team) {
+
+        return $this->render('team/team.html.twig', [
+            'team' => $team,
+        ]);
+    }
 }
