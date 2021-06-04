@@ -5,10 +5,15 @@
 
 :root {
     --redAccent: rgb(201, 9, 19);
+    --whiteAccent: rgb(247, 247, 247);
+}
+
+html, body {
+    scrollbar-color: var(--redAccent) var(--whiteAccent);
 }
 
 body {
-    background-color: rgb(247, 247, 247);
+    background-color: var(--whiteAccent);
     display: flex;
     flex-direction: column;
     font-family: Roboto, sans-serif;
