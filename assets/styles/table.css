@@ -1,0 +1,17 @@
+table {
+    float: left;
+    width: 100%;
+}
+
+table th {
+    padding: 1px;
+    cursor: default;
+    border: 3px solid var(--redAccent);
+}
+
+table td {
+    padding: 2px 3px;
+    border: 2px solid var(--redAccent);
+    border-bottom: 2px solid var(--redAccent);
+    vertical-align: middle;
+}
