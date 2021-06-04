@@ -1,3 +1,32 @@
 #team_add_form {
 
 }
+
+#teams_table_div {
+    width: 50vw;
+}
+
+.team_addresses {
+    width: 100%;
+}
+
+.team_addresses, .team_addresses * {
+    border: none;
+}
+
+.team_addresses > tbody {
+    width: 100%;
+}
+
+.team_addresses > tbody > tr {
+    width: 100%;
+}
+
+.city_column {
+    text-align: right;
+    width: 40%;
+}
+
+.street_column {
+    width: 60%;
+}
