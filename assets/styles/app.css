@@ -82,4 +82,6 @@ a:visited {
 #main_content {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-self: center;
 }

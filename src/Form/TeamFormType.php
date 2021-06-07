@@ -2,19 +2,25 @@
 
 namespace App\Form;
 
+use App\Entity\Address;
 use App\Entity\Team;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class TeamAddFormType extends AbstractType
+class TeamFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('name')
-            ->add('addresses\Form')
+            ->add('addresses', EntityType::class, [
+                'class' => Address::class,
+                'multiple' => true,
+                'required' => false,
+            ])
             ->add('add', SubmitType::class)
         ;
     }

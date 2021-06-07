@@ -22,6 +22,37 @@
     </div>
 
     <div id="main_content">
-        {{ form(form) }}
+        <div id="team_add_form_div">
+            {{ form_start(team_add_form) }}
+                {{ form_row(team_add_form.name) }}
+                {{ form_row(team_add_form.addresses) }}
+
+                <div>
+                    <img id="team_add_new_address_button" src="{{ asset('build/gfx/add.svg') }}" alt="Add address">
+                </div>
+
+                {{ form_row(team_add_form.add) }}
+            {{ form_end(team_add_form) }}
+        </div>
+
+        <div id="team_add_new_address_form_div">
+            {{ form_start(team_add_new_address_form) }}
+                {{ form_row(team_add_new_address_form.street) }}
+                {{ form_row(team_add_new_address_form.city) }}
+
+                <div>
+                    <img id="team_add_new_address_new_city_button" src="{{ asset('build/gfx/add.svg') }}" alt="Add city">
+                </div>
+
+                {{ form_row(team_add_new_address_form.add) }}
+            {{ form_end(team_add_new_address_form) }}
+        </div>
+
+        <div id="team_add_new_address_new_city_form_div">
+            {{ form_start(team_add_new_address_new_city_form) }}
+                {{ form_row(team_add_new_address_new_city_form.name) }}
+                {{ form_row(team_add_new_address_new_city_form.add) }}
+            {{ form_end(team_add_new_address_new_city_form) }}
+        </div>
     </div>
 {% endblock %}

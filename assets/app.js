@@ -13,3 +13,4 @@ import './styles/table.css';
 
 // start the Stimulus application
 import './bootstrap';
+

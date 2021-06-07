@@ -2,8 +2,14 @@
 
 namespace App\Controller;
 
+use App\Entity\Address;
+use App\Entity\City;
 use App\Entity\Team;
-use App\Form\TeamAddFormType;
+use App\Form\AddressFormType;
+use App\Form\CityFormType;
+use App\Form\TeamFormType;
+use App\Repository\AddressRepository;
+use App\Repository\CityRepository;
 use App\Repository\TeamRepository;
 use Exception;
 use Psr\Log\LoggerInterface;
@@ -27,15 +33,47 @@ class TeamController extends AbstractController
     /**
      * @Route("/teams/add", name="teams_add")
      */
-    public function add(Request $request, TeamRepository $teamRepository, LoggerInterface $logger): Response
+    public function add(Request $request, TeamRepository $teamRepository, AddressRepository $addressRepository, CityRepository $cityRepository, LoggerInterface $logger): Response
     {
         $team = new Team();
+        $address = new Address();
+        $city = new City();
 
-        $form = $this->createForm(TeamAddFormType::class, $team);
+        $teamAddForm = $this->createForm(TeamFormType::class, $team);
+        $addressAddForm = $this->createForm(AddressFormType::class, $address);
+        $cityAddForm = $this->createForm(CityFormType::class, $city);
 
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            $team = $form->getData();
+        if ($request->request->has('city_form')) {
+            $logger->debug('Czy to tu wchodzi?');
+            $cityAddForm->handleRequest($request);
+        } elseif ($request->request->has('address_form')) {
+            $addressAddForm->handleRequest($request);
+        } elseif ($request->request->has('team_form')) {
+            $teamAddForm->handleRequest($request);
+        }
+
+        if ($cityAddForm->isSubmitted() && $cityAddForm->isValid()) {
+            $city = $cityAddForm->getData();
+
+            try {
+                $cityRepository->add($city);
+            } catch (Exception $exception) {
+                $logger->critical('Cannot add city', [
+                    'exception' => $exception,
+                ]);
+            }
+        } elseif ($addressAddForm->isSubmitted() && $addressAddForm->isValid()) {
+            $address = $addressAddForm->getData();
+
+            try {
+                $addressRepository->add($address);
+            } catch (Exception $exception) {
+                $logger->critical('Cannot add address', [
+                    'exception' => $exception,
+                ]);
+            }
+        } elseif ($teamAddForm->isSubmitted() && $teamAddForm->isValid()) {
+            $team = $teamAddForm->getData();
 
             try {
                 $teamRepository->add($team);
@@ -49,15 +87,17 @@ class TeamController extends AbstractController
         }
 
         return $this->render('team/add.html.twig', [
-            'form' => $form->createView(),
+            'team_add_form' => $teamAddForm->createView(),
+            'team_add_new_address_form' => $addressAddForm->createView(),
+            'team_add_new_address_new_city_form' => $cityAddForm->createView(),
         ]);
     }
 
     /**
      * @Route("/team/{id}", methods={"GET"}, name="team", requirements={"id": "[1-9]\d*"})
      */
-    public function team(Request $request, Team $team) {
-
+    public function team(Request $request, Team $team)
+    {
         return $this->render('team/team.html.twig', [
             'team' => $team,
         ]);

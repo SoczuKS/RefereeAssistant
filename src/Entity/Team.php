@@ -26,7 +26,7 @@ class Team
     private $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Address::class, inversedBy="teams")
+     * @ORM\ManyToMany(targetEntity=Address::class, inversedBy="teams", cascade={"persist"})
      */
     private $addresses;
 

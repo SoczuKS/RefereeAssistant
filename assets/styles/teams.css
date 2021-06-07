@@ -30,3 +30,19 @@
 .street_column {
     width: 60%;
 }
+
+#team_add_new_address_form_div {
+    visibility: hidden;
+}
+
+#team_add_new_address_new_city_form_div {
+    visibility: hidden;
+}
+
+#team_add_new_address_button {
+    cursor: pointer;
+}
+
+#team_add_new_address_new_city_button {
+    cursor: pointer;
+}
