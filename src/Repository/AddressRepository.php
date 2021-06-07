@@ -4,6 +4,8 @@ namespace App\Repository;
 
 use App\Entity\Address;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\OptimisticLockException;
+use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -17,6 +19,17 @@ class AddressRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Address::class);
+    }
+
+    /**
+     * @param Address $address Address to add
+     *
+     * @throws ORMException
+     * @throws OptimisticLockException
+     */
+    public function add(Address $address): void {
+        $this->_em->persist($address);
+        $this->_em->flush();
     }
 
     // /**
