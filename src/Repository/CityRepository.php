@@ -4,6 +4,8 @@ namespace App\Repository;
 
 use App\Entity\City;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\OptimisticLockException;
+use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -19,6 +21,17 @@ class CityRepository extends ServiceEntityRepository
         parent::__construct($registry, City::class);
     }
 
+    /**
+     * @param City $city City to add
+     *
+     * @throws ORMException
+     * @throws OptimisticLockException
+     */
+    public function add(City $city): void
+    {
+        $this->_em->persist($city);
+        $this->_em->flush();
+    }
     // /**
     //  * @return City[] Returns an array of City objects
     //  */
