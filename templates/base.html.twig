@@ -21,6 +21,24 @@
                         {% block page_title %}
                         {% endblock %}
                     </div>
+
+                    <div id="user_panel">
+                        {% if not app.user %}
+                            <div id="login_register_panel_small">
+                                <a href="{{ path('login') }}">
+                                    <span>{{ 'pages.login' | trans | capitalize }}</span>
+                                </a>
+
+                                <a href="{{ path('registration') }}">
+                                    <span>{{ 'pages.register' | trans | capitalize }}</span>
+                                </a>
+                            </div>
+                        {% else %}
+                            <div id="user_panel_content">
+
+                            </div>
+                        {% endif %}
+                    </div>
                 {% endblock %}
             </nav>
             <div id="content">
