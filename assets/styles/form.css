@@ -1,7 +1,7 @@
 form {
     display: flex;
     flex-direction: column;
-    width: 25vw;
+    width: 30vw;
     margin-top: 5px;
     margin-bottom: 10px;
     border: 1px solid var(--redAccent);
@@ -24,8 +24,8 @@ form > div > label {
     justify-content: center;
 }
 
-form > div > input, form > div > select {
-    width: 65%;
+form > div > input, form > div > select, form > div > .select_with_add_button {
+    width: 70%;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -38,4 +38,22 @@ form > div > button {
 
 form > div > img {
     margin: 0 auto;
+}
+
+.select_with_add_button {
+    display: flex;
+}
+
+.select_with_add_button > img {
+    width: 24px;
+    display: flex;
+    align-self: flex-start;
+    margin-left: 4px;
+}
+
+.select_with_add_button > input, .select_with_add_button > select {
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }

@@ -25,10 +25,13 @@
         <div id="team_add_form_div">
             {{ form_start(team_add_form) }}
                 {{ form_row(team_add_form.name) }}
-                {{ form_row(team_add_form.addresses) }}
 
                 <div>
-                    <img id="team_add_new_address_button" src="{{ asset('build/gfx/add.svg') }}" alt="Add address">
+                    {{ form_label(team_add_form.addresses) }}
+                    <div class="select_with_add_button">
+                        {{ form_widget(team_add_form.addresses) }}
+                        <img id="team_add_new_address_button" src="{{ asset('build/gfx/add.svg') }}" alt="Add address">
+                    </div>
                 </div>
 
                 {{ form_row(team_add_form.add) }}
@@ -38,10 +41,13 @@
         <div id="team_add_new_address_form_div">
             {{ form_start(team_add_new_address_form) }}
                 {{ form_row(team_add_new_address_form.street) }}
-                {{ form_row(team_add_new_address_form.city) }}
 
                 <div>
-                    <img id="team_add_new_address_new_city_button" src="{{ asset('build/gfx/add.svg') }}" alt="Add city">
+                    {{ form_label(team_add_new_address_form.city) }}
+                    <div class="select_with_add_button">
+                        {{ form_widget(team_add_new_address_form.city) }}
+                        <img id="team_add_new_address_new_city_button" src="{{ asset('build/gfx/add.svg') }}" alt="Add city">
+                    </div>
                 </div>
 
                 {{ form_row(team_add_new_address_form.add) }}
