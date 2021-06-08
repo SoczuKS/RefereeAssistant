@@ -17,6 +17,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 class TeamController extends AbstractController
 {
@@ -32,6 +33,8 @@ class TeamController extends AbstractController
 
     /**
      * @Route("/teams/add", name="teams_add")
+     *
+     * @IsGranted("ROLE_ADMIN")
      */
     public function add(Request $request, TeamRepository $teamRepository, AddressRepository $addressRepository, CityRepository $cityRepository, LoggerInterface $logger): Response
     {
