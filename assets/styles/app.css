@@ -6,6 +6,7 @@
 :root {
     --redAccent: rgb(201, 9, 19);
     --whiteAccent: rgb(247, 247, 247);
+    --mainMenuHeight: 64px;
 }
 
 html, body {
@@ -20,11 +21,15 @@ body {
 }
 
 #page_title {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 2em;
     font-weight: bold;
+    display: flex;
+    justify-content: center;
+    height: var(--mainMenuHeight);
 }
 
 #main_menu {
@@ -43,8 +48,8 @@ body {
 }
 
 #main_menu img {
-    width: 64px;
-    height: 64px;
+    width: var(--mainMenuHeight);
+    height: var(--mainMenuHeight);
 }
 
 #content {
