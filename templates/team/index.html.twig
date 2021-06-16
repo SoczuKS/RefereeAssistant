@@ -32,7 +32,7 @@
                 </thead>
                 <tbody>
                     {% for team in teams %}
-                        <tr>
+                        <tr class="clickable_row" data-href="{{ path('team', { id: team.id }) }}">
                             <td>{{ team.name }}</td>
                             <td>
                                 <table class="team_addresses">
