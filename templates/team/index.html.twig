@@ -36,10 +36,10 @@
                             <td>{{ team.name }}</td>
                             <td>
                                 <table class="team_addresses">
-                                    {% for address in team.getAddresses() %}
+                                    {% for address in team.addresses %}
                                         <tr>
-                                            <td class="street_column">{{ address.getStreet() }}</td>
-                                            <td class="city_column">{{ address.getCity().getName() }}</td>
+                                            <td class="street_column">{{ address.street }}</td>
+                                            <td class="city_column">{{ address.city.name }}</td>
                                         </tr>
                                     {% endfor %}
                                 </table>
