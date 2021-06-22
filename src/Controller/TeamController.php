@@ -47,7 +47,6 @@ class TeamController extends AbstractController
         $cityAddForm = $this->createForm(CityFormType::class, $city);
 
         if ($request->request->has('city_form')) {
-            $logger->debug('Czy to tu wchodzi?');
             $cityAddForm->handleRequest($request);
         } elseif ($request->request->has('address_form')) {
             $addressAddForm->handleRequest($request);
