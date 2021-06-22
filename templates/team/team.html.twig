@@ -10,11 +10,9 @@
     {{ encore_entry_script_tags('teams') }}
 {% endblock %}
 
-{% block title %}Nazwa zespołu{% endblock %}
+{% block title %} {{ team.name }} {% endblock %}
 
-{% block page_title %}
-    Nazwa zespołu
-{% endblock %}
+{% block page_title %} {{ team.name }} {% endblock %}
 
 {% block content %}
     <div id="submenu">
