@@ -27,7 +27,7 @@ class TeamRepository extends ServiceEntityRepository
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function add(Team $team): void
+    public function save(Team $team): void
     {
         $this->_em->persist($team);
         $this->_em->flush();

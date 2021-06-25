@@ -23,6 +23,10 @@
 
     <div id="main_content">
         <div id="teams_table_div">
+            <div class="pagination_navigation">
+                {{ knp_pagination_render(pagination) }}
+            </div>
+
             <table id="teams_table">
                 <thead>
                 <tr>
@@ -31,7 +35,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                    {% for team in teams %}
+                    {% for team in pagination.items %}
                         <tr class="clickable_row" data-href="{{ path('team', { id: team.id }) }}">
                             <td>{{ team.name }}</td>
                             <td>

@@ -27,11 +27,12 @@ class CityRepository extends ServiceEntityRepository
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function add(City $city): void
+    public function save(City $city): void
     {
         $this->_em->persist($city);
         $this->_em->flush();
     }
+
     // /**
     //  * @return City[] Returns an array of City objects
     //  */

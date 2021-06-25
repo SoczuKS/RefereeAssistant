@@ -27,7 +27,8 @@ class AddressRepository extends ServiceEntityRepository
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function add(Address $address): void {
+    public function save(Address $address): void
+    {
         $this->_em->persist($address);
         $this->_em->flush();
     }
