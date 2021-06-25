@@ -91,10 +91,12 @@ class TeamController extends AbstractController
 
             try {
                 $this->cityService->saveCity($city);
+                $this->addFlash('success', 'city_added');
             } catch (Exception $exception) {
                 $this->logger->critical('Cannot add city', [
                     'exception' => $exception,
                 ]);
+                $this->addFlash('error', 'add_failed');
             }
 
             return $this->redirectToRoute('teams_add');
@@ -105,10 +107,12 @@ class TeamController extends AbstractController
 
             try {
                 $this->addressService->saveAddress($address);
+                $this->addFlash('success', 'address_added');
             } catch (Exception $exception) {
                 $this->logger->critical('Cannot add address', [
                     'exception' => $exception,
                 ]);
+                $this->addFlash('error', 'add_failed');
             }
 
             return $this->redirectToRoute('teams_add');
@@ -119,10 +123,12 @@ class TeamController extends AbstractController
 
             try {
                 $this->teamService->saveTeam($team);
+                $this->addFlash('success', 'team_added');
             } catch (Exception $exception) {
                 $this->logger->critical('Cannot add team', [
                     'exception' => $exception,
                 ]);
+                $this->addFlash('error', 'add_failed');
             }
 
             return $this->redirectToRoute('teams_add');
