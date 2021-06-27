@@ -13,7 +13,7 @@ import './styles/flash_message.css';
 import './styles/table.css';
 
 // start the Stimulus application
-import './bootstrap';
+//import './bootstrap';
 
 function showNextFlash()
 {
