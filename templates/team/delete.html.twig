@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('teams') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('teams') }}
+{% endblock %}
+
+{% block title %} {{ "pages.teams_delete" | trans | capitalize }}{% endblock %}
+
+{% block page_title %} {{ "pages.teams_delete" | trans | upper }} {% endblock %}
+
+{% block content %}
+    <div>
+        <h1>Czy na pewno chcesz usunąć drużynę {{ team.name }}?</h1>
+        <a href="{{ path('team_delete', {'id': team.id, 'action': 'confirm' }) }}">TAK</a>
+        <a href="{{ app.request.headers.get('referer') }}">NIE</a>
+    </div>
+{% endblock %}

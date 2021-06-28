@@ -94,3 +94,19 @@ a:visited {
 .clickable_row {
     cursor: pointer;
 }
+
+.edit_column, .edit_column * {
+    color: lightskyblue;
+}
+
+.delete_column, .delete_column * {
+    color: darkred;
+}
+
+.edit_column, .delete_column {
+    padding-left: 0;
+    padding-right: 0;
+    border-top: none;
+    border-left:none;
+    border-right: none;
+}

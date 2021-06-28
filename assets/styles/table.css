@@ -15,3 +15,11 @@ table td {
     border-bottom: 2px solid var(--redAccent);
     vertical-align: middle;
 }
+
+td.center-vertically {
+    text-align: center;
+}
+
+.hidden_cell {
+    border: none;
+}

@@ -149,7 +149,7 @@ class TeamController extends AbstractController
      *     requirements={"id": "\d+"}
      * )
      */
-    public function team(Request $request, Team $team): Response
+    public function singleTeam(Request $request, Team $team): Response
     {
         return $this->render('team/team.html.twig', [
             'team' => $team,
@@ -163,6 +163,8 @@ class TeamController extends AbstractController
      *     methods={"GET","PUT"},
      *     requirements={"id": "\d+"}
      * )
+     *
+     * @IsGranted("ROLE_ADMIN")
      */
     public function edit(Request $request, Team $team)
     {
@@ -187,12 +189,12 @@ class TeamController extends AbstractController
 
             try {
                 $this->cityService->saveCity($city);
-                $this->addFlash('success', 'city_added');
+                $this->addFlash('success', 'city_saved');
             } catch (Exception $exception) {
-                $this->logger->critical('Cannot add city', [
+                $this->logger->critical('Cannot save city', [
                     'exception' => $exception,
                 ]);
-                $this->addFlash('error', 'add_failed');
+                $this->addFlash('error', 'save_failed');
             }
 
             return $this->redirectToRoute('teams_add');
@@ -203,12 +205,12 @@ class TeamController extends AbstractController
 
             try {
                 $this->addressService->saveAddress($address);
-                $this->addFlash('success', 'address_added');
+                $this->addFlash('success', 'address_saved');
             } catch (Exception $exception) {
-                $this->logger->critical('Cannot add address', [
+                $this->logger->critical('Cannot save address', [
                     'exception' => $exception,
                 ]);
-                $this->addFlash('error', 'add_failed');
+                $this->addFlash('error', 'save_failed');
             }
 
             return $this->redirectToRoute('teams_add');
@@ -219,12 +221,12 @@ class TeamController extends AbstractController
 
             try {
                 $this->teamService->saveTeam($team);
-                $this->addFlash('success', 'team_added');
+                $this->addFlash('success', 'team_saved');
             } catch (Exception $exception) {
                 $this->logger->critical('Cannot add team', [
                     'exception' => $exception,
                 ]);
-                $this->addFlash('error', 'add_failed');
+                $this->addFlash('error', 'save_failed');
             }
 
             return $this->redirectToRoute('teams');

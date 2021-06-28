@@ -42,5 +42,10 @@ class TeamService
         $this->teamRepository->save($team);
     }
 
+    public function deleteTeam(Team $team)
+    {
+        $this->teamRepository->delete($team);
+    }
+
     const TEAMS_PER_PAGE = 30;
 }

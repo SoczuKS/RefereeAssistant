@@ -32,13 +32,18 @@
                 <tr>
                     <th>Nazwa</th>
                     <th>Adres</th>
+
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <th class="hidden_cell">&nbsp;</th>
+                        <th class="hidden_cell">&nbsp;</th>
+                    {% endif %}
                 </tr>
                 </thead>
                 <tbody>
                     {% for team in pagination.items %}
                         <tr class="clickable_row" data-href="{{ path('team', { id: team.id }) }}">
-                            <td>{{ team.name }}</td>
-                            <td>
+                            <td class="clickable_row_part">{{ team.name }}</td>
+                            <td class="clickable_row_part">
                                 <table class="team_addresses">
                                     {% for address in team.addresses %}
                                         <tr>
@@ -48,6 +53,19 @@
                                     {% endfor %}
                                 </table>
                             </td>
+
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <td class="center_vertically edit_column">
+                                    <a href="{{ path('team_edit', { 'id': team.id }) }}">
+                                        <span class="material-icons">edit</span>
+                                    </a>
+                                </td>
+                                <td class="center_vertically delete_column">
+                                    <a href="{{ path('team_delete', { 'id': team.id }) }}">
+                                        <span class="material-icons">delete</span>
+                                    </a>
+                                </td>
+                            {% endif %}
                         </tr>
                     {% endfor %}
                 </tbody>
