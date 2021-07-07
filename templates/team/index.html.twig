@@ -22,10 +22,8 @@
     </div>
 
     <div id="main_content">
-        <div id="teams_table_div">
-            <div class="pagination_navigation">
-                {{ knp_pagination_render(pagination) }}
-            </div>
+        <div id="teams_table_div" class="paginated_table_div">
+            {{ knp_pagination_render(pagination) }}
 
             <table id="teams_table">
                 <thead>
@@ -34,7 +32,6 @@
                     <th>Adres</th>
 
                     {% if is_granted('ROLE_ADMIN') %}
-                        <th class="hidden_cell">&nbsp;</th>
                         <th class="hidden_cell">&nbsp;</th>
                     {% endif %}
                 </tr>
@@ -55,21 +52,23 @@
                             </td>
 
                             {% if is_granted('ROLE_ADMIN') %}
-                                <td class="center_vertically edit_column">
-                                    <a href="{{ path('team_edit', { 'id': team.id }) }}">
-                                        <span class="material-icons">edit</span>
-                                    </a>
-                                </td>
-                                <td class="center_vertically delete_column">
-                                    <a href="{{ path('team_delete', { 'id': team.id }) }}">
-                                        <span class="material-icons">delete</span>
-                                    </a>
+                                <td class="center_vertically admin_buttons_column">
+                                    <div>
+                                        <a class="edit_button" href="{{ path('team_edit', { 'id': team.id }) }}">
+                                            <span class="material-icons">edit</span>
+                                        </a>
+                                        <a class="delete_button" href="{{ path('team_delete', { 'id': team.id }) }}">
+                                            <span class="material-icons">delete</span>
+                                        </a>
+                                    </div>
                                 </td>
                             {% endif %}
                         </tr>
                     {% endfor %}
                 </tbody>
             </table>
+
+            {{ knp_pagination_render(pagination) }}
         </div>
     </div>
 {% endblock %}

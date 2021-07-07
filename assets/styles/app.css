@@ -95,18 +95,46 @@ a:visited {
     cursor: pointer;
 }
 
-.edit_column, .edit_column * {
-    color: lightskyblue;
+.edit_button {
+    color: lightskyblue !important;
 }
 
-.delete_column, .delete_column * {
-    color: darkred;
+.delete_button {
+    color: darkred !important;
 }
 
-.edit_column, .delete_column {
+.admin_buttons_column {
     padding-left: 0;
     padding-right: 0;
     border-top: none;
     border-left:none;
     border-right: none;
+    width: 64px;
+}
+
+.admin_buttons_column > div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.paginated_table_div {
+    display: flex;
+    flex-direction: column;
+}
+
+.paginated_table_div > table {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.pagination {
+    font-size: 1.25em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.pagination .current {
+    font-weight: bold;
+    color: var(--redAccent);
 }
